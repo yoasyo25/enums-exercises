@@ -60,11 +60,11 @@ You should perform the exercises in the order below:
 *** `sort_by`
 *** `count`
 *** `reject`
-*** `reduce` 
+*** `reduce`
 *** `any?`
 *** `all?`
-* `none?`
-* `one?`
+*** `none?`
+*** `one?`
 * `group_by`
 * `zip`
 
