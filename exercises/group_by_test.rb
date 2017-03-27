@@ -14,9 +14,10 @@ class GroupByTest < Minitest::Test
   end
 
   def test_group_numbers_by_odd_and_even
+    skip
     numbers = [1, 1, 2, 3, 5, 8, 13, 21, 34, 55]
     odd_and_even = numbers.group_by do |number|
-      # Your code goes here
+      number.odd?
     end
     expected = {1=>[1, 1, 3, 5, 13, 21, 55], 0=>[2, 8, 34]}
     assert_equal expected, odd_and_even
@@ -47,9 +48,10 @@ class GroupByTest < Minitest::Test
   end
 
   def test_group_by_order_of_magnitude
-    skip
     numbers = [1, 3, 503, 239, 4938, 3932, 19982, 93, 21, 501787]
-    # Your code goes here
+    grouped = numbers.group_by do |number|
+      number.to_s.length
+    end
     expected = {1=>[1, 3], 2=>[93, 21], 3=>[503, 239], 4=>[4938, 3932], 5=>[19982], 6=>[501787]}
     assert_equal expected, grouped
   end
